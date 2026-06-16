@@ -1,4 +1,4 @@
-import { mongooseAdapter } from '@payloadcms/db-mongodb'
+import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { MongoMemoryReplSet } from 'mongodb-memory-server'
 import path from 'path'
@@ -7,6 +7,7 @@ import { payloadDryRun } from 'payload-dry-run'
 import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 
+import { dryRunCreatePlugin } from '../src/plugins/dryRun/index.js'
 import { testEmailAdapter } from './helpers/testEmailAdapter.js'
 import { seed } from './seed.js'
 
@@ -48,9 +49,10 @@ const buildConfigWithMemoryDB = async () => {
         },
       },
     ],
-    db: mongooseAdapter({
-      ensureIndexes: true,
-      url: process.env.DATABASE_URL || '',
+    db: postgresAdapter({
+      pool: {
+        connectionString: process.env.DATABASE_URL || '',
+      },
     }),
     editor: lexicalEditor(),
     email: testEmailAdapter,
@@ -61,6 +63,12 @@ const buildConfigWithMemoryDB = async () => {
       payloadDryRun({
         collections: {
           posts: true,
+        },
+      }),
+      dryRunCreatePlugin({
+        collections: ['posts'],
+        dryRunFieldName: {
+          posts: '_dryRun',
         },
       }),
     ],
