@@ -112,6 +112,8 @@ export function withCreateDryRun<T extends CollectionConfig>(
         dryRunLog('[DRY RUN] Rolling back created document with ID:', resultID)
         await req.payload.db.rollbackTransaction(req.transactionID)
         dryRunLog('[DRY RUN] Document rolled back successfully.')
+
+        return result
       },
     ],
     beforeOperation: [
