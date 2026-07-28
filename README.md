@@ -1,10 +1,13 @@
-<div align="center">
+# `@lizardglobal/payload-dry-run`
 
-<h1>Dry Run Create Plugin for Payload CMS</h1>
+[Payload CMS](https://payloadcms.com/docs/plugins/overview) plugin that allows you to test your <code>create</code> operations without persisting data — full validation, hooks, and business logic, automatically rolled back.
 
-<p>Test your <code>create</code> operations without persisting data — full validation, hooks, and business logic, automatically rolled back.</p>
+[![npm](https://img.shields.io/npm/v/@lizardglobal/payload-dry-run.svg)](https://www.npmjs.com/package/@lizardglobal/payload-dry-run)
 
-</div>
+[![Release](https://github.com/LizardGlobalGH/payload-dry-run/actions/workflows/release.yml/badge.svg)](https://github.com/LizardGlobalGH/payload-dry-run/actions/workflows/release.yml)
+
+> [!WARNING]
+> This plugin is still **experimental**. APIs, collection schemas, and behavior may change without a stable compatibility guarantee. Use in production with caution and pin versions deliberately.
 
 ## Features
 
@@ -38,17 +41,17 @@
 ## Installation
 
 ```bash
-pnpm add @your-org/payload-plugin-dry-run-create
+pnpm add @lizardglobal/payload-plugin-dry-run-create
 # or
-npm install @your-org/payload-plugin-dry-run-create
+npm install @lizardglobal/payload-plugin-dry-run-create
 # or
-yarn add @your-org/payload-plugin-dry-run-create
+yarn add @lizardglobal/payload-plugin-dry-run-create
 ```
 
 ## Quick Start
 
 ```ts
-import { dryRunCreatePlugin } from '@your-org/payload-plugin-dry-run-create'
+import { dryRunCreatePlugin } from '@lizardglobal/payload-plugin-dry-run-create'
 import { buildConfig } from 'payload'
 
 export default buildConfig({
@@ -140,7 +143,7 @@ When the flag is detected, `req.context._dryRun` is set to `true` for the remain
 Applies the dry-run behavior directly to a single `CollectionConfig`, without going through the plugin. Use this when you're building your own plugin or composing collection configs manually:
 
 ```ts
-import { withCreateDryRun } from '@your-org/payload-plugin-dry-run-create'
+import { withCreateDryRun } from '@lizardglobal/payload-plugin-dry-run-create'
 
 const Orders: CollectionConfig = withCreateDryRun(
   {
@@ -158,7 +161,7 @@ const Orders: CollectionConfig = withCreateDryRun(
 A thin wrapper around Payload's built-in `APIError`. Exposed for use in hooks or custom endpoints that need to throw a formatted Payload error:
 
 ```ts
-import { APIError } from '@your-org/payload-plugin-dry-run-create'
+import { APIError } from '@lizardglobal/payload-plugin-dry-run-create'
 
 throw new APIError('Something went wrong', 422)
 ```

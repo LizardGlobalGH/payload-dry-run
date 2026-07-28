@@ -56,9 +56,13 @@
     "generate:types": "pnpm dev:generate-types",
     "lint": "eslint",
     "lint:fix": "eslint ./src --fix",
-    "test": "pnpm test:int && pnpm test:e2e",
-    "test:e2e": "playwright test",
-    "test:int": "vitest"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "changeset": "changeset",
+    "changeset:version": "changeset version",
+    "release": "pnpm clean && pnpm build && node ./scripts/changeset-publish.mjs",
+    "prepublishOnly": "pnpm build"
   },
   "devDependencies": {
     "@changesets/cli": "^2.31.1",
