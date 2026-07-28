@@ -1,9 +1,25 @@
 {
   "name": "payload-dry-run",
   "version": "1.0.0",
-  "description": "A blank template to get started with Payload 3.0",
+  "description": "Dry run plugin for Payload CMS",
   "license": "MIT",
   "type": "module",
+  "author": "",
+  "homepage": "https://github.com/LizardGlobalGH/payload-dry-run#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LizardGlobalGH/payload-dry-run.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LizardGlobalGH/payload-dry-run/issues"
+  },
+  "keywords": [
+    "payload",
+    "payloadcms",
+    "payload-plugin",
+    "dry-run",
+    "plugin"
+  ],
   "exports": {
     ".": {
       "import": "./src/index.ts",
@@ -45,6 +61,7 @@
     "test:int": "vitest"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.31.1",
     "@eslint/eslintrc": "^3.2.0",
     "@payloadcms/db-postgres": "3.84.1",
     "@payloadcms/db-sqlite": "3.84.1",
