@@ -41,17 +41,17 @@
 ## Installation
 
 ```bash
-pnpm add @lizardglobal/payload-plugin-dry-run-create
+pnpm add @lizardglobal/payload-dry-run
 # or
-npm install @lizardglobal/payload-plugin-dry-run-create
+npm install @lizardglobal/payload-dry-run
 # or
-yarn add @lizardglobal/payload-plugin-dry-run-create
+yarn add @lizardglobal/payload-dry-run
 ```
 
 ## Quick Start
 
 ```ts
-import { dryRunCreatePlugin } from '@lizardglobal/payload-plugin-dry-run-create'
+import { dryRunCreatePlugin } from '@lizardglobal/payload-dry-run'
 import { buildConfig } from 'payload'
 
 export default buildConfig({
