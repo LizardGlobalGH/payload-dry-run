@@ -1,5 +1,5 @@
 {
-  "name": "payload-dry-run",
+  "name": "@lizardglobal/payload-dry-run",
   "version": "1.0.0",
   "description": "Dry run plugin for Payload CMS",
   "license": "MIT",
