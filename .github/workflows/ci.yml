@@ -62,7 +62,7 @@ jobs:
       - name: Build
         run: pnpm build
 
-  test-int:
+  test:
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -97,4 +97,4 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run integration tests
-        run: pnpm test:int
+        run: pnpm test
