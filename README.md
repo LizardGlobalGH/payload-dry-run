@@ -143,7 +143,7 @@ When the flag is detected, `req.context._dryRun` is set to `true` for the remain
 Applies the dry-run behavior directly to a single `CollectionConfig`, without going through the plugin. Use this when you're building your own plugin or composing collection configs manually:
 
 ```ts
-import { withCreateDryRun } from '@lizardglobal/payload-plugin-dry-run-create'
+import { withCreateDryRun } from '@lizardglobal/payload-plugin-dry-run'
 
 const Orders: CollectionConfig = withCreateDryRun(
   {
@@ -161,7 +161,7 @@ const Orders: CollectionConfig = withCreateDryRun(
 A thin wrapper around Payload's built-in `APIError`. Exposed for use in hooks or custom endpoints that need to throw a formatted Payload error:
 
 ```ts
-import { APIError } from '@lizardglobal/payload-plugin-dry-run-create'
+import { APIError } from '@lizardglobal/payload-plugin-dry-run'
 
 throw new APIError('Something went wrong', 422)
 ```

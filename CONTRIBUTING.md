@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for your interest in improving `@lizardglobal/payload-discord-sync`.
+Thanks for your interest in improving `@lizardglobal/payload-dry-run`.
 
 ## Getting started
 
@@ -10,8 +10,8 @@ Requirements:
 - [pnpm](https://pnpm.io) `^9 || ^10`
 
 ```bash
-git clone https://github.com/LizardGlobalGH/payload-discord-sync.git
-cd payload-discord-sync
+git clone https://github.com/LizardGlobalGH/payload-dry-run.git
+cd payload-dry-run
 pnpm install
 ```
 
@@ -64,7 +64,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for published history.
 
 ## Reporting issues
 
-Use [GitHub Issues](https://github.com/LizardGlobalGH/payload-discord-sync/issues) for bugs and feature requests. Include:
+Use [GitHub Issues](https://github.com/LizardGlobalGH/payload-dry-run/issues) for bugs and feature requests. Include:
 
 - Payload and plugin versions
 - Relevant plugin config (redact tokens)
